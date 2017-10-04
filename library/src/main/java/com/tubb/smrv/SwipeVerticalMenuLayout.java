@@ -111,6 +111,7 @@ public class SwipeVerticalMenuLayout extends SwipeMenuLayout {
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                if (!isSwipeEnable()) break;
                 ViewParent parent = getParent();
                 if(parent!= null){
                     parent.requestDisallowInterceptTouchEvent(false);

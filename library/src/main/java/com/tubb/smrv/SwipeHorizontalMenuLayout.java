@@ -274,6 +274,7 @@ public class SwipeHorizontalMenuLayout extends SwipeMenuLayout {
     public void smoothCloseMenu(int duration) {
         mCurrentSwiper.autoCloseMenu(mScroller, getScrollX(), duration);
         invalidate();
+        mCurrentSwiper = null;
     }
 
     @Override

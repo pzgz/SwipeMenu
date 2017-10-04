@@ -111,6 +111,7 @@ public class SwipeHorizontalMenuLayout extends SwipeMenuLayout {
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                if (!isSwipeEnable()) break;
                 ViewParent parent = getParent();
                 if(parent!= null){
                     parent.requestDisallowInterceptTouchEvent(false);
@@ -274,7 +275,6 @@ public class SwipeHorizontalMenuLayout extends SwipeMenuLayout {
     public void smoothCloseMenu(int duration) {
         mCurrentSwiper.autoCloseMenu(mScroller, getScrollX(), duration);
         invalidate();
-        mCurrentSwiper = null;
     }
 
     @Override
